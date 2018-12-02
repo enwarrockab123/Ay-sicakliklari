@@ -1,25 +1,88 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2026
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{11A7F384-0F6B-415A-94B9-56DE67CE569F}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{11A7F384-0F6B-415A-94B9-56DE67CE569F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11A7F384-0F6B-415A-94B9-56DE67CE569F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11A7F384-0F6B-415A-94B9-56DE67CE569F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11A7F384-0F6B-415A-94B9-56DE67CE569F}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4A1EDA5D-BBEC-492A-A172-06993DA494CB}
-	EndGlobalSection
-EndGlobal
+ class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Veri girilecek ayın ismini küçük harflerle yazınız= ");
+            string ay = Convert.ToString(Console.ReadLine()); int gun, gecici;
+            if (ay == "ocak" || ay == "mart" || ay == "mayıs" || ay == "temmuz" || ay == "ağustos" || ay == "ekim" || ay == "aralık")
+            {
+                gun = 31; Console.Clear();
+                int[] veri = new int[gun];
+                for (int i = 0; i < gun; i++)
+                {
+                    Console.Write("{0}. Günün sıcaklığı= ", i + 1);
+                    veri[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                for (int i = 0; i < gun - 1; i++)
+                {
+                    for (int j = i + 1; j < gun; j++)
+                    {
+                        if (veri[i] > veri[j])
+                        {
+                            gecici = veri[i];
+                            veri[i] = veri[j];
+                            veri[j] = gecici;
+                        }
+                    }
+                }
+                Console.Clear();
+                Console.Write("{0} ayının En düşük sıcaklığı= {1} En yüksek sıcaklığı= {2}", ay, veri[0], veri[gun - 1]);
+                Console.ReadKey();
+            }
+            else if (ay == "nisan" || ay == "haziran" || ay == "eylül" || ay == "kasım")
+            {
+                gun = 30;Console.Clear();
+                int[] veri = new int[gun];
+                for (int i = 0; i < gun; i++)
+                {
+                    Console.Write("{0}. Günün sıcaklığı= ", i + 1);
+                    veri[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                for (int i = 0; i < gun - 1; i++)
+                {
+                    for (int j = i + 1; j < gun; j++)
+                    {
+                        if (veri[i] > veri[j])
+                        {
+                            gecici = veri[i];
+                            veri[i] = veri[j];
+                            veri[j] = gecici;
+                        }
+                    }
+                }
+                Console.Clear();
+                Console.Write("{0} ayının En düşük sıcaklığı= {1} En yüksek sıcaklığı= {2}", ay, veri[0], veri[gun - 1]);
+                Console.ReadKey();
+            }
+            else if (ay == "şubat")
+            {
+                gun = 28;Console.Clear();
+                int[] veri = new int[gun];
+                for (int i = 0; i < gun; i++)
+                {
+                    Console.Write("{0}. Günün sıcaklığı= ", i + 1);
+                    veri[i] = Convert.ToInt32(Console.ReadLine());
+                }
+                for (int i = 0; i < gun - 1; i++)
+                {
+                    for (int j = i + 1; j < gun; j++)
+                    {
+                        if (veri[i] > veri[j])
+                        {
+                            gecici = veri[i];
+                            veri[i] = veri[j];
+                            veri[j] = gecici;
+                        }
+                    }
+                }
+                Console.Clear();
+                Console.Write("{0} ayının En düşük sıcaklığı= {1} En yüksek sıcaklığı= {2}", ay, veri[0], veri[gun - 1]);
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.Clear(); Console.Write("Ay ismi hatalı girildi çıkmak için bir tuşa basınız..."); Console.ReadKey();
+            }
+        }
+    }
